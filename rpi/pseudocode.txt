@@ -1,0 +1,14 @@
+while true:
+  get frame from camera 
+  predict frame 
+
+  if prediction not null:
+    make predictions for 3 seconds
+    
+    if after 3 seconds:
+      get most common prediction
+      
+      if hazard:
+        turn red LED
+      else:
+        move servos accordingly
