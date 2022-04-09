@@ -14,10 +14,10 @@ function App() {
       <header className="header">
         <img width="100" src="/logo.png" alt="logo" />
         <h1>eTrash</h1>
-        { user && <SignOut /> }
+        { user ? <SignOut /> : <SignIn /> }
       </header>
       <section>
-        { user ? <Home /> : <SignIn /> }
+        { user && <Home /> }
       </section>
     </div>
   );
