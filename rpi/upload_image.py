@@ -14,7 +14,7 @@ db = firestore.client()
 
 email = 'ericzh1616@gmail.com'
 
-def upload_image(filename):
+def upload_image(filename, category):
   
   save_name = str(uuid.uuid1())
 
@@ -31,7 +31,7 @@ def upload_image(filename):
   # firestore
   data = {
     'uid': user.uid,
-    'category': 'trash', # placeholder -> (trash, recycle, compost)
+    'category': category, # trash, recycle, compost
     'url': blob.public_url,
     'timestamp': firestore.SERVER_TIMESTAMP
   }
@@ -39,5 +39,5 @@ def upload_image(filename):
   db.collection('garbage_history').document(save_name).set(data)
 
 if __name__ == '__main__':
-  upload_image('test_apple.jpg')
-  upload_image('test_paper.jpg')
+  upload_image('test_apple.jpg', 'compost')
+  upload_image('test_paper.jpg', 'recycle')
