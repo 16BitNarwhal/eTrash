@@ -63,7 +63,9 @@ function GarbageHistory() {
   return (
     <div className="history">
       <h2>History</h2>
-      { garbageData && garbageData.map(info => <Garbage key={info.url} info={info} /> )}
+      <div className="garbages">
+        { garbageData && garbageData.map(info => <Garbage key={info.url} info={info} /> )}
+      </div>
     </div>
   )
 }
@@ -76,11 +78,12 @@ function Garbage(props) {
     return null
   }
 
-  const date = timestamp.toDate().toLocaleString()
+  const date = timestamp.toDate().toLocaleString() 
   return (
     <div className="garbage">
-      <img width="300" src={url} alt="garbage" />
-      <p><b>{category}</b> at {date}</p>
+      <img src={url} alt="garbage" />
+      <p className="category">{category.toUpperCase()}</p>
+      <p className="timestamp">{date}</p>
     </div>
   )
 

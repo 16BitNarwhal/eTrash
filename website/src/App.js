@@ -11,7 +11,7 @@ function App() {
   
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="header">
         <img width="100" src="/logo.png" alt="logo" />
         <h1>eTrash</h1>
         { user && <SignOut /> }
