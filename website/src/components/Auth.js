@@ -1,6 +1,6 @@
 import React from 'react'
 import { firebase, auth } from '../firebase-config';
-import { useAuthState } from 'react-firebase-hooks/auth';
+
 function SignIn() {
 
   const signInWithGoogle = () => {

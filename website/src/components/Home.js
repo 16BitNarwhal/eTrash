@@ -1,4 +1,5 @@
 import React from 'react'
+import { auth, firestore } from '../firebase-config';
 
 function Home() {
 
